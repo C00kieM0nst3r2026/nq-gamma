@@ -1,0 +1,73 @@
+<style>
+  :root{--bg:#0b0e12;--panel:#12171d;--panel2:#161c23;--line:#232c36;--ink:#e6edf3;--dim:#8a95a3;--faint:#5a6472;
+    --red:#ff5d6c;--green:#35d3a6;--amber:#eab547;--blue:#5aa9ff;--blue-dim:#152838;
+    --mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;}
+  *{box-sizing:border-box} body{margin:0;background:#07090c}
+  .wrap{max-width:470px;margin:0 auto;padding:12px 6px;color:var(--ink);font-family:var(--sans)}
+  .card{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:20px 18px 16px;display:flex;flex-direction:column;gap:18px}
+  .top{display:flex;justify-content:space-between;align-items:flex-start}
+  .tkr{font-family:Georgia,serif;font-size:30px;letter-spacing:.06em;line-height:1}
+  .px{text-align:right} .px .lab{font-size:10px;letter-spacing:.18em;color:var(--faint);text-transform:uppercase}
+  .px .val{font-family:var(--mono);font-size:20px;margin-top:3px}
+  .banner{border-radius:10px;padding:13px 14px;display:flex;gap:12px;align-items:flex-start}
+  .banner .pill{flex:none;font-size:10px;letter-spacing:.1em;font-weight:600;border-radius:5px;padding:4px 7px;text-transform:uppercase}
+  .banner p{margin:0;font-size:12.5px;line-height:1.5;color:#c8d3de}
+  .b-red{border:1px solid #4a2730;background:linear-gradient(180deg,#1c1216,transparent)} .b-red .pill{color:#ffb3ba;background:#241216;border:1px solid #4a2730}
+  .b-blue{border:1px solid #274a68;background:linear-gradient(180deg,var(--blue-dim),transparent)} .b-blue .pill{color:#bfe0ff;background:#0f2033;border:1px solid #274a68}
+  .sec{display:flex;flex-direction:column;gap:9px}
+  .sh{display:flex;justify-content:space-between;align-items:baseline}
+  .sh .l{font-size:10px;letter-spacing:.2em;color:var(--dim);text-transform:uppercase}
+  .sh .r{font-size:10px;letter-spacing:.06em;color:var(--faint);font-family:var(--mono)}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .grid6{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  @media(max-width:430px){.grid6{grid-template-columns:repeat(3,1fr)}.grid4{grid-template-columns:repeat(2,1fr)}}
+  .box{border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:10px;display:flex;flex-direction:column;gap:6px;min-width:0}
+  .box .k{font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:600}
+  .box .v{font-family:var(--mono);font-size:17px;font-variant-numeric:tabular-nums;color:var(--ink)}
+  .box.sm .v{font-size:14px}
+  .r-red{border-color:#4a2730;background:linear-gradient(180deg,#1c1216,var(--panel))} .r-red .k{color:var(--red)} .r-red .v{color:#ffdfe3}
+  .r-grn{border-color:#1c4438;background:linear-gradient(180deg,#0f1c19,var(--panel))} .r-grn .k{color:var(--green)} .r-grn .v{color:#d8fff2}
+  .r-amb{border-color:#4a3d18;background:linear-gradient(180deg,#1c1810,var(--panel))} .r-amb .k{color:var(--amber)} .r-amb .v{color:#ffeec4}
+  .r-neu .k{color:var(--dim)} .r-neu .v{color:var(--ink)}
+  .read{display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--line);padding-top:15px}
+  .badge{align-self:flex-start;font-size:11px;letter-spacing:.12em;font-weight:600;text-transform:uppercase;padding:5px 10px;border-radius:5px;color:#ffe9bf;background:#241d0e;border:1px solid #4a3d18}
+  .read p{margin:0;font-size:12.5px;line-height:1.55;color:#c2ccd7}
+  .trade{display:flex;gap:11px;align-items:flex-start;background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:12px 13px}
+  .trade .t{flex:none;font-size:10px;letter-spacing:.12em;font-weight:600;color:var(--green);text-transform:uppercase;margin-top:1px}
+  .trade p{margin:0;font-size:12px;line-height:1.5;color:#c2ccd7}
+  .nav{display:flex;justify-content:space-between;align-items:center;max-width:470px;margin:0 auto 4px;padding:0 8px}
+  .nav a{font-family:var(--mono);font-size:11px;color:var(--faint);text-decoration:none}
+  .nav a:hover{color:var(--dim)}
+  .foot{font-size:10px;line-height:1.5;color:var(--faint);text-align:center;font-family:var(--mono)} .foot b{color:var(--dim);font-weight:400}
+</style>
+<div class="nav"><a href="../stocks/">‹ watchlist</a><a href="../">NQ ›</a></div>
+<div class="wrap"><div class="card">
+  <div class="top"><div class="tkr">DIS</div><div class="px"><div class="lab">Last</div><div class="val">97.36</div></div></div>
+  <div class="banner b-red"><span class="pill">Short Gamma</span><p>Net dealer gamma is <b style='color:#ffb3ba'>negative</b> and DIS is below the zero-gamma flip (98.31) — dealers hedge <i>with</i> the move, so expect trend and expanding ranges. Reclaiming the flip calms the tape.</p></div>
+  <div class="sec"><div class="sh"><span class="l">Gamma Walls</span><span class="r">≤7DTE · own chain</span></div>
+    <div class="grid3">
+      <div class="box r-red"><span class="k">Call Wall</span><span class="v">98</span></div>
+      <div class="box r-amb"><span class="k">Gamma Flip</span><span class="v">98.31</span></div>
+      <div class="box r-grn"><span class="k">Put Wall</span><span class="v">96</span></div>
+    </div></div>
+  <div class="sec"><div class="sh"><span class="l">Floor Pivots</span><span class="r">PP 97.81</span></div>
+    <div class="grid6">
+      <div class="box sm r-red"><span class="k">R3</span><span class="v">100.83</span></div>
+      <div class="box sm r-red"><span class="k">R2</span><span class="v">99.93</span></div>
+      <div class="box sm r-red"><span class="k">R1</span><span class="v">98.71</span></div>
+      <div class="box sm r-grn"><span class="k">S1</span><span class="v">96.59</span></div>
+      <div class="box sm r-grn"><span class="k">S2</span><span class="v">95.69</span></div>
+      <div class="box sm r-grn"><span class="k">S3</span><span class="v">94.47</span></div>
+    </div></div>
+  <div class="sec"><div class="sh"><span class="l">Prior Session + Pre-Market</span></div>
+    <div class="grid4">
+      <div class="box sm r-neu"><span class="k">Prior High</span><span class="v">99.04</span></div>
+      <div class="box sm r-neu"><span class="k">Prior Low</span><span class="v">96.92</span></div>
+      <div class="box sm r-neu"><span class="k">Pre-Mkt High</span><span class="v">97.88</span></div>
+      <div class="box sm r-neu"><span class="k">Pre-Mkt Low</span><span class="v">96.53</span></div>
+    </div></div>
+  <div class="read"><span class="badge">Bearish · Trend / Short-Gamma</span><p>Below the flip the walls stop pinning and momentum extends. Put wall (96) is the downside magnet; the flip (98.31) is the reclaim line, call wall (98) caps upside.</p>
+    <div class="trade"><span class="t">Trade</span><p>Trade with the trend / fade rips into the flip (98.31); a reclaim on volume flips it neutral.</p></div></div>
+  <div class="foot"><b>Built 2026-07-08 14:48 ET</b> · DIS near-term options (CBOE ≈15-min delayed) + Yahoo<br>Gamma from ≤7 DTE, self-computed IV/gamma.</div>
+</div></div>

@@ -1,0 +1,108 @@
+<style>
+  :root{--bg:#0b0e12;--panel:#12171d;--panel2:#161c23;--line:#232c36;--ink:#e6edf3;--dim:#8a95a3;--faint:#5a6472;
+    --red:#ff5d6c;--green:#35d3a6;--amber:#eab547;--blue:#5aa9ff;--blue-dim:#152838;
+    --mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;}
+  *{box-sizing:border-box} body{margin:0;background:#07090c}
+  .wrap{max-width:470px;margin:0 auto;padding:12px 6px;color:var(--ink);font-family:var(--sans)}
+  .card{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:20px 18px 16px;display:flex;flex-direction:column;gap:18px}
+  .top{display:flex;justify-content:space-between;align-items:flex-start}
+  .tkr{font-family:Georgia,serif;font-size:30px;letter-spacing:.06em;line-height:1}
+  .px{text-align:right} .px .lab{font-size:10px;letter-spacing:.18em;color:var(--faint);text-transform:uppercase}
+  .px .val{font-family:var(--mono);font-size:20px;margin-top:3px}
+  .banner{border-radius:10px;padding:13px 14px;display:flex;gap:12px;align-items:flex-start}
+  .banner .pill{flex:none;font-size:10px;letter-spacing:.1em;font-weight:600;border-radius:5px;padding:4px 7px;text-transform:uppercase}
+  .banner p{margin:0;font-size:12.5px;line-height:1.5;color:#c8d3de}
+  .b-red{border:1px solid #4a2730;background:linear-gradient(180deg,#1c1216,transparent)} .b-red .pill{color:#ffb3ba;background:#241216;border:1px solid #4a2730}
+  .b-blue{border:1px solid #274a68;background:linear-gradient(180deg,var(--blue-dim),transparent)} .b-blue .pill{color:#bfe0ff;background:#0f2033;border:1px solid #274a68}
+  .sec{display:flex;flex-direction:column;gap:9px}
+  .sh{display:flex;justify-content:space-between;align-items:baseline}
+  .sh .l{font-size:10px;letter-spacing:.2em;color:var(--dim);text-transform:uppercase}
+  .sh .r{font-size:10px;letter-spacing:.06em;color:var(--faint);font-family:var(--mono)}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .grid6{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  @media(max-width:430px){.grid6{grid-template-columns:repeat(3,1fr)}.grid4{grid-template-columns:repeat(2,1fr)}}
+  .box{border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:10px;display:flex;flex-direction:column;gap:6px;min-width:0}
+  .box .k{font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:600}
+  .box .v{font-family:var(--mono);font-size:17px;font-variant-numeric:tabular-nums;color:var(--ink)}
+  .box.sm .v{font-size:14px}
+  .r-red{border-color:#4a2730;background:linear-gradient(180deg,#1c1216,var(--panel))} .r-red .k{color:var(--red)} .r-red .v{color:#ffdfe3}
+  .r-grn{border-color:#1c4438;background:linear-gradient(180deg,#0f1c19,var(--panel))} .r-grn .k{color:var(--green)} .r-grn .v{color:#d8fff2}
+  .r-amb{border-color:#4a3d18;background:linear-gradient(180deg,#1c1810,var(--panel))} .r-amb .k{color:var(--amber)} .r-amb .v{color:#ffeec4}
+  .r-neu .k{color:var(--dim)} .r-neu .v{color:var(--ink)}
+  .read{display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--line);padding-top:15px}
+  .badge{align-self:flex-start;font-size:11px;letter-spacing:.12em;font-weight:600;text-transform:uppercase;padding:5px 10px;border-radius:5px;color:#ffe9bf;background:#241d0e;border:1px solid #4a3d18}
+  .read p{margin:0;font-size:12.5px;line-height:1.55;color:#c2ccd7}
+  .trade{display:flex;gap:11px;align-items:flex-start;background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:12px 13px}
+  .trade .t{flex:none;font-size:10px;letter-spacing:.12em;font-weight:600;color:var(--green);text-transform:uppercase;margin-top:1px}
+  .trade p{margin:0;font-size:12px;line-height:1.5;color:#c2ccd7}
+  .nav{display:flex;justify-content:space-between;align-items:center;max-width:470px;margin:0 auto 4px;padding:0 8px}
+  .nav a{font-family:var(--mono);font-size:11px;color:var(--faint);text-decoration:none}
+  .nav a:hover{color:var(--dim)}
+  .foot{font-size:10px;line-height:1.5;color:var(--faint);text-align:center;font-family:var(--mono)} .foot b{color:var(--dim);font-weight:400}
+</style>
+<style>.hub{max-width:520px;margin:0 auto;padding:16px 10px}
+  .hub h1{font-family:Georgia,serif;font-weight:400;font-size:22px;color:var(--ink);margin:0 0 2px}
+  .hub .sub{font-family:var(--mono);font-size:11px;color:var(--faint);margin:0 0 16px}
+  .row{display:grid;grid-template-columns:64px 70px 1fr auto;align-items:center;gap:10px;text-decoration:none;
+    background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:12px 14px;margin-bottom:8px}
+  .row:hover{border-color:var(--dim)}
+  .row .sy{font-family:Georgia,serif;font-size:18px;color:var(--ink);letter-spacing:.04em}
+  .row .last{font-family:var(--mono);font-size:14px;color:var(--dim);text-align:right}
+  .row .w{font-family:var(--mono);font-size:12px;color:var(--faint);text-align:center}
+  .row .rg{font-size:9.5px;letter-spacing:.08em;font-weight:600;text-transform:uppercase;padding:4px 8px;border-radius:5px;border:1px solid}
+  .hub .nqlink{display:block;text-align:center;font-family:var(--mono);font-size:12px;color:var(--blue);text-decoration:none;margin-top:6px;padding:10px;border:1px dashed var(--line);border-radius:9px}
+  .hub .foot2{font-size:10px;color:var(--faint);text-align:center;font-family:var(--mono);margin-top:14px;line-height:1.5}
+</style>
+<div class="hub">
+  <h1>Gamma Watchlist</h1>
+  <p class="sub">Call wall / put wall · dealer-positioning regime · tap a ticker for the full card</p>
+  <a class="row" href="../QQQ/">
+      <span class="sy">QQQ</span>
+      <span class="last">709.44</span>
+      <span class="w"><b style="color:#ff8a94">710</b> / <b style="color:#8fe3c4">705</b></span>
+      <span class="rg" style="color:#ffb3ba;background:#241216;border-color:#ff5d6c44">Short Gamma</span>
+    </a><a class="row" href="../SPY/">
+      <span class="sy">SPY</span>
+      <span class="last">744.88</span>
+      <span class="w"><b style="color:#ff8a94">750</b> / <b style="color:#8fe3c4">740</b></span>
+      <span class="rg" style="color:#ffb3ba;background:#241216;border-color:#ff5d6c44">Short Gamma</span>
+    </a><a class="row" href="../TSLA/">
+      <span class="sy">TSLA</span>
+      <span class="last">390.75</span>
+      <span class="w"><b style="color:#ff8a94">410</b> / <b style="color:#8fe3c4">390</b></span>
+      <span class="rg" style="color:#ffb3ba;background:#241216;border-color:#ff5d6c44">Short Gamma</span>
+    </a><a class="row" href="../NVDA/">
+      <span class="sy">NVDA</span>
+      <span class="last">202.96</span>
+      <span class="w"><b style="color:#ff8a94">202.5</b> / <b style="color:#8fe3c4">200</b></span>
+      <span class="rg" style="color:#bfe0ff;background:#0f2033;border-color:#5aa9ff44">Long Gamma</span>
+    </a><a class="row" href="../AAPL/">
+      <span class="sy">AAPL</span>
+      <span class="last">314.05</span>
+      <span class="w"><b style="color:#ff8a94">315</b> / <b style="color:#8fe3c4">312.5</b></span>
+      <span class="rg" style="color:#bfe0ff;background:#0f2033;border-color:#5aa9ff44">Long Gamma</span>
+    </a><a class="row" href="../MSFT/">
+      <span class="sy">MSFT</span>
+      <span class="last">384.24</span>
+      <span class="w"><b style="color:#ff8a94">390</b> / <b style="color:#8fe3c4">382.5</b></span>
+      <span class="rg" style="color:#bfe0ff;background:#0f2033;border-color:#5aa9ff44">Long Gamma</span>
+    </a><a class="row" href="../DIS/">
+      <span class="sy">DIS</span>
+      <span class="last">97.36</span>
+      <span class="w"><b style="color:#ff8a94">98</b> / <b style="color:#8fe3c4">96</b></span>
+      <span class="rg" style="color:#ffb3ba;background:#241216;border-color:#ff5d6c44">Short Gamma</span>
+    </a><a class="row" href="../WMT/">
+      <span class="sy">WMT</span>
+      <span class="last">112.86</span>
+      <span class="w"><b style="color:#ff8a94">115</b> / <b style="color:#8fe3c4">111</b></span>
+      <span class="rg" style="color:#bfe0ff;background:#0f2033;border-color:#5aa9ff44">Long Gamma</span>
+    </a><a class="row" href="../GOOG/">
+      <span class="sy">GOOG</span>
+      <span class="last">355.49</span>
+      <span class="w"><b style="color:#ff8a94">360</b> / <b style="color:#8fe3c4">350</b></span>
+      <span class="rg" style="color:#bfe0ff;background:#0f2033;border-color:#5aa9ff44">Long Gamma</span>
+    </a>
+  <a class="nqlink" href="../">📈 NQ futures gamma dashboard ›</a>
+  <p class="foot2">Built 2026-07-08 14:48 ET · CBOE (≈15-min delayed) + Yahoo · free data, self-computed gamma<br>Refreshes automatically pre-open &amp; post-close.</p>
+</div>
