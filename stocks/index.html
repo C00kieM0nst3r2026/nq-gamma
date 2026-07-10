@@ -66,53 +66,186 @@
 </style>
 <div class="hub">
   <h1>Gamma Watchlist</h1>
-  <p class="sub">Call wall / put wall · dealer-positioning regime · tap a ticker for the full card</p>
-  <a class="row" href="../QQQ/">
+  <p class="sub">Call wall / put wall · dealer-positioning regime · type to filter, Enter to open</p>
+  <input id="q" type="text" placeholder="Search tickers…  (e.g. NVDA)" autocomplete="off" spellcheck="false"
+    style="width:100%;height:42px;padding:0 14px;margin-bottom:14px;background:var(--panel);border:1px solid var(--line);border-radius:9px;color:var(--ink);font-family:var(--mono);font-size:15px;letter-spacing:.05em;outline:none;text-transform:uppercase" />
+  <div id="nomatch" style="display:none;font-family:var(--mono);font-size:12px;color:var(--faint);padding:8px 2px">No tracked ticker matches — this list covers the curated set above.</div>
+  <a class="row" data-sym="QQQ" href="../QQQ/">
       <span class="sy">QQQ</span>
-      <span class="last">723.28</span>
-      <span class="w"><b style="color:#ff8a94">730</b> / <b style="color:#8fe3c4">720</b></span>
+      <span class="last">722.95</span>
+      <span class="w"><b style="color:#ff8a94">725</b> / <b style="color:#8fe3c4">720</b></span>
       <span class="rg" style="color:#ffb3ba;background:#241216;border-color:#ff5d6c44">Short Gamma</span>
-    </a><a class="row" href="../SPY/">
+    </a><a class="row" data-sym="SPY" href="../SPY/">
       <span class="sy">SPY</span>
-      <span class="last">751.71</span>
+      <span class="last">752.77</span>
       <span class="w"><b style="color:#ff8a94">755</b> / <b style="color:#8fe3c4">750</b></span>
       <span class="rg" style="color:#bfe0ff;background:#0f2033;border-color:#5aa9ff44">Long Gamma</span>
-    </a><a class="row" href="../TSLA/">
-      <span class="sy">TSLA</span>
-      <span class="last">406.55</span>
-      <span class="w"><b style="color:#ff8a94">420</b> / <b style="color:#8fe3c4">400</b></span>
-      <span class="rg" style="color:#bfe0ff;background:#0f2033;border-color:#5aa9ff44">Long Gamma</span>
-    </a><a class="row" href="../NVDA/">
-      <span class="sy">NVDA</span>
-      <span class="last">202.78</span>
-      <span class="w"><b style="color:#ff8a94">205</b> / <b style="color:#8fe3c4">200</b></span>
-      <span class="rg" style="color:#bfe0ff;background:#0f2033;border-color:#5aa9ff44">Long Gamma</span>
-    </a><a class="row" href="../AAPL/">
+    </a><a class="row" data-sym="IWM" href="../IWM/">
+      <span class="sy">IWM</span>
+      <span class="last">296.66</span>
+      <span class="w"><b style="color:#ff8a94">300</b> / <b style="color:#8fe3c4">290</b></span>
+      <span class="rg" style="color:#ffb3ba;background:#241216;border-color:#ff5d6c44">Short Gamma</span>
+    </a><a class="row" data-sym="DIA" href="../DIA/">
+      <span class="sy">DIA</span>
+      <span class="last">524.65</span>
+      <span class="w"><b style="color:#ff8a94">526</b> / <b style="color:#8fe3c4">525</b></span>
+      <span class="rg" style="color:#ffb3ba;background:#241216;border-color:#ff5d6c44">Below Put Wall</span>
+    </a><a class="row" data-sym="GLD" href="../GLD/">
+      <span class="sy">GLD</span>
+      <span class="last">376.5</span>
+      <span class="w"><b style="color:#ff8a94">380</b> / <b style="color:#8fe3c4">360</b></span>
+      <span class="rg" style="color:#ffb3ba;background:#241216;border-color:#ff5d6c44">Short Gamma</span>
+    </a><a class="row" data-sym="AAPL" href="../AAPL/">
       <span class="sy">AAPL</span>
-      <span class="last">316.22</span>
+      <span class="last">314.11</span>
       <span class="w"><b style="color:#ff8a94">320</b> / <b style="color:#8fe3c4">310</b></span>
       <span class="rg" style="color:#bfe0ff;background:#0f2033;border-color:#5aa9ff44">Long Gamma</span>
-    </a><a class="row" href="../MSFT/">
+    </a><a class="row" data-sym="MSFT" href="../MSFT/">
       <span class="sy">MSFT</span>
-      <span class="last">384.36</span>
+      <span class="last">385.33</span>
       <span class="w"><b style="color:#ff8a94">390</b> / <b style="color:#8fe3c4">380</b></span>
       <span class="rg" style="color:#bfe0ff;background:#0f2033;border-color:#5aa9ff44">Long Gamma</span>
-    </a><a class="row" href="../DIS/">
+    </a><a class="row" data-sym="NVDA" href="../NVDA/">
+      <span class="sy">NVDA</span>
+      <span class="last">205.88</span>
+      <span class="w"><b style="color:#ff8a94">205</b> / <b style="color:#8fe3c4">200</b></span>
+      <span class="rg" style="color:#bfe0ff;background:#0f2033;border-color:#5aa9ff44">Long Gamma</span>
+    </a><a class="row" data-sym="GOOG" href="../GOOG/">
+      <span class="sy">GOOG</span>
+      <span class="last">353.78</span>
+      <span class="w"><b style="color:#ff8a94">360</b> / <b style="color:#8fe3c4">350</b></span>
+      <span class="rg" style="color:#bfe0ff;background:#0f2033;border-color:#5aa9ff44">Long Gamma</span>
+    </a><a class="row" data-sym="META" href="../META/">
+      <span class="sy">META</span>
+      <span class="last">668.86</span>
+      <span class="w"><b style="color:#ff8a94">700</b> / <b style="color:#8fe3c4">630</b></span>
+      <span class="rg" style="color:#ffb3ba;background:#241216;border-color:#ff5d6c44">Short Gamma</span>
+    </a><a class="row" data-sym="AMZN" href="../AMZN/">
+      <span class="sy">AMZN</span>
+      <span class="last">246.72</span>
+      <span class="w"><b style="color:#ff8a94">250</b> / <b style="color:#8fe3c4">240</b></span>
+      <span class="rg" style="color:#bfe0ff;background:#0f2033;border-color:#5aa9ff44">Long Gamma</span>
+    </a><a class="row" data-sym="TSLA" href="../TSLA/">
+      <span class="sy">TSLA</span>
+      <span class="last">409.81</span>
+      <span class="w"><b style="color:#ff8a94">420</b> / <b style="color:#8fe3c4">400</b></span>
+      <span class="rg" style="color:#bfe0ff;background:#0f2033;border-color:#5aa9ff44">Long Gamma</span>
+    </a><a class="row" data-sym="AMD" href="../AMD/">
+      <span class="sy">AMD</span>
+      <span class="last">553.84</span>
+      <span class="w"><b style="color:#ff8a94">560</b> / <b style="color:#8fe3c4">550</b></span>
+      <span class="rg" style="color:#ffb3ba;background:#241216;border-color:#ff5d6c44">Short Gamma</span>
+    </a><a class="row" data-sym="NFLX" href="../NFLX/">
+      <span class="sy">NFLX</span>
+      <span class="last">73.41</span>
+      <span class="w"><b style="color:#ff8a94">75</b> / <b style="color:#8fe3c4">74</b></span>
+      <span class="rg" style="color:#ffb3ba;background:#241216;border-color:#ff5d6c44">Below Put Wall</span>
+    </a><a class="row" data-sym="AVGO" href="../AVGO/">
+      <span class="sy">AVGO</span>
+      <span class="last">401.16</span>
+      <span class="w"><b style="color:#ff8a94">400</b> / <b style="color:#8fe3c4">390</b></span>
+      <span class="rg" style="color:#ffb3ba;background:#241216;border-color:#ff5d6c44">Short Gamma</span>
+    </a><a class="row" data-sym="MU" href="../MU/">
+      <span class="sy">MU</span>
+      <span class="last">976.18</span>
+      <span class="w"><b style="color:#ff8a94">1,000</b> / <b style="color:#8fe3c4">950</b></span>
+      <span class="rg" style="color:#ffb3ba;background:#241216;border-color:#ff5d6c44">Short Gamma</span>
+    </a><a class="row" data-sym="MRVL" href="../MRVL/">
+      <span class="sy">MRVL</span>
+      <span class="last">238.16</span>
+      <span class="w"><b style="color:#ff8a94">240</b> / <b style="color:#8fe3c4">230</b></span>
+      <span class="rg" style="color:#ffb3ba;background:#241216;border-color:#ff5d6c44">Short Gamma</span>
+    </a><a class="row" data-sym="INTC" href="../INTC/">
+      <span class="sy">INTC</span>
+      <span class="last">109.42</span>
+      <span class="w"><b style="color:#ff8a94">110</b> / <b style="color:#8fe3c4">105</b></span>
+      <span class="rg" style="color:#ffb3ba;background:#241216;border-color:#ff5d6c44">Short Gamma</span>
+    </a><a class="row" data-sym="PLTR" href="../PLTR/">
+      <span class="sy">PLTR</span>
+      <span class="last">128.99</span>
+      <span class="w"><b style="color:#ff8a94">132</b> / <b style="color:#8fe3c4">130</b></span>
+      <span class="rg" style="color:#ffb3ba;background:#241216;border-color:#ff5d6c44">Below Put Wall</span>
+    </a><a class="row" data-sym="SMCI" href="../SMCI/">
+      <span class="sy">SMCI</span>
+      <span class="last">28.76</span>
+      <span class="w"><b style="color:#ff8a94">30</b> / <b style="color:#8fe3c4">28</b></span>
+      <span class="rg" style="color:#bfe0ff;background:#0f2033;border-color:#5aa9ff44">Long Gamma</span>
+    </a><a class="row" data-sym="COIN" href="../COIN/">
+      <span class="sy">COIN</span>
+      <span class="last">164.72</span>
+      <span class="w"><b style="color:#ff8a94">170</b> / <b style="color:#8fe3c4">165</b></span>
+      <span class="rg" style="color:#ffb3ba;background:#241216;border-color:#ff5d6c44">Below Put Wall</span>
+    </a><a class="row" data-sym="BABA" href="../BABA/">
+      <span class="sy">BABA</span>
+      <span class="last">114.65</span>
+      <span class="w"><b style="color:#ff8a94">115</b> / <b style="color:#8fe3c4">110</b></span>
+      <span class="rg" style="color:#ffb3ba;background:#241216;border-color:#ff5d6c44">Short Gamma</span>
+    </a><a class="row" data-sym="UBER" href="../UBER/">
+      <span class="sy">UBER</span>
+      <span class="last">75.42</span>
+      <span class="w"><b style="color:#ff8a94">75</b> / <b style="color:#8fe3c4">74</b></span>
+      <span class="rg" style="color:#bfe0ff;background:#0f2033;border-color:#5aa9ff44">Long Gamma</span>
+    </a><a class="row" data-sym="SOFI" href="../SOFI/">
+      <span class="sy">SOFI</span>
+      <span class="last">19.27</span>
+      <span class="w"><b style="color:#ff8a94">20</b> / <b style="color:#8fe3c4">19</b></span>
+      <span class="rg" style="color:#ffb3ba;background:#241216;border-color:#ff5d6c44">Short Gamma</span>
+    </a><a class="row" data-sym="DIS" href="../DIS/">
       <span class="sy">DIS</span>
-      <span class="last">96.17</span>
+      <span class="last">96.13</span>
       <span class="w"><b style="color:#ff8a94">97</b> / <b style="color:#8fe3c4">96</b></span>
       <span class="rg" style="color:#ffb3ba;background:#241216;border-color:#ff5d6c44">Short Gamma</span>
-    </a><a class="row" href="../WMT/">
+    </a><a class="row" data-sym="WMT" href="../WMT/">
       <span class="sy">WMT</span>
-      <span class="last">112.21</span>
+      <span class="last">112.73</span>
       <span class="w"><b style="color:#ff8a94">115</b> / <b style="color:#8fe3c4">110</b></span>
       <span class="rg" style="color:#bfe0ff;background:#0f2033;border-color:#5aa9ff44">Long Gamma</span>
-    </a><a class="row" href="../GOOG/">
-      <span class="sy">GOOG</span>
-      <span class="last">356.24</span>
-      <span class="w"><b style="color:#ff8a94">360</b> / <b style="color:#8fe3c4">350</b></span>
+    </a><a class="row" data-sym="JPM" href="../JPM/">
+      <span class="sy">JPM</span>
+      <span class="last">336.92</span>
+      <span class="w"><b style="color:#ff8a94">340</b> / <b style="color:#8fe3c4">332.5</b></span>
+      <span class="rg" style="color:#bfe0ff;background:#0f2033;border-color:#5aa9ff44">Long Gamma</span>
+    </a><a class="row" data-sym="BAC" href="../BAC/">
+      <span class="sy">BAC</span>
+      <span class="last">59.6</span>
+      <span class="w"><b style="color:#ff8a94">60</b> / <b style="color:#8fe3c4">59</b></span>
+      <span class="rg" style="color:#ffb3ba;background:#241216;border-color:#ff5d6c44">Short Gamma</span>
+    </a><a class="row" data-sym="XOM" href="../XOM/">
+      <span class="sy">XOM</span>
+      <span class="last">137.91</span>
+      <span class="w"><b style="color:#ff8a94">140</b> / <b style="color:#8fe3c4">135</b></span>
+      <span class="rg" style="color:#bfe0ff;background:#0f2033;border-color:#5aa9ff44">Long Gamma</span>
+    </a><a class="row" data-sym="F" href="../F/">
+      <span class="sy">F</span>
+      <span class="last">13.82</span>
+      <span class="w"><b style="color:#ff8a94">14</b> / <b style="color:#8fe3c4">13.5</b></span>
       <span class="rg" style="color:#bfe0ff;background:#0f2033;border-color:#5aa9ff44">Long Gamma</span>
     </a>
   <a class="nqlink" href="../">📈 NQ futures gamma dashboard ›</a>
-  <p class="foot2">Built 2026-07-10 09:29 ET · CBOE (≈15-min delayed) + Yahoo · free data, self-computed gamma<br>Refreshes automatically pre-open &amp; post-close.</p>
+  <p class="foot2">Built 2026-07-10 09:51 ET · CBOE (≈15-min delayed) + Yahoo · free data, self-computed gamma<br>Refreshes automatically pre-open &amp; post-close.</p>
 </div>
+<script>
+(function(){
+  var q=document.getElementById('q'),
+      rows=[].slice.call(document.querySelectorAll('.row')),
+      nm=document.getElementById('nomatch'),
+      syms=rows.map(function(r){return r.getAttribute('data-sym');});
+  function apply(){
+    var v=q.value.trim().toUpperCase(), n=0;
+    rows.forEach(function(r){
+      var show=!v||r.getAttribute('data-sym').indexOf(v)>-1;
+      r.style.display=show?'':'none'; if(show)n++;
+    });
+    nm.style.display=n?'none':'';
+  }
+  q.addEventListener('input',apply);
+  q.addEventListener('keydown',function(e){
+    if(e.key!=='Enter')return;
+    var v=q.value.trim().toUpperCase();
+    if(syms.indexOf(v)>-1){location.href='../'+v+'/';return;}
+    var vis=rows.filter(function(r){return r.style.display!=='none';});
+    if(vis.length===1)location.href=vis[0].getAttribute('href');
+  });
+  q.focus();
+})();
+</script>
