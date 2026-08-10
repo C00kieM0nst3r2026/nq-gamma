@@ -45,7 +45,25 @@
   .smrow .sk{font-family:var(--mono);color:var(--ink);flex:none;font-variant-numeric:tabular-nums}
   .smrow .dsc{color:var(--faint);font-size:11px}
   .smtac{font-size:11.5px;color:var(--dim);margin-top:3px}
-  .disc{font-size:10px;color:var(--faint);margin-top:2px}
+  .disc{font-size:10px;color:var(--faint);margin-top:2px;line-height:1.5}
+  .gxwrap{display:flex;flex-direction:column;gap:3px}
+  .gxrow{display:grid;grid-template-columns:56px 1fr 62px 40px;align-items:center;gap:8px}
+  .gxrow .lv{font-family:var(--mono);font-size:11px;font-variant-numeric:tabular-nums;color:var(--ink)}
+  .gxbar{position:relative;height:11px;background:var(--panel);border:1px solid var(--line);border-radius:3px}
+  .gxbar:before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:#2c3742}
+  .gxbar i{position:absolute;top:1px;bottom:1px;border-radius:2px}
+  .gxbar i.c{left:50%;background:linear-gradient(90deg,rgba(255,93,108,.4),var(--red))}
+  .gxbar i.p{right:50%;background:linear-gradient(270deg,rgba(53,211,166,.4),var(--green))}
+  .gxrow .amt{font-family:var(--mono);font-size:11px;text-align:right;font-variant-numeric:tabular-nums}
+  .gxrow .oi{font-family:var(--mono);font-size:9.5px;text-align:right;color:var(--faint)}
+  .gxhd{display:grid;grid-template-columns:56px 1fr 62px 40px;gap:8px;font-size:8.5px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--faint);margin-bottom:2px}
+  .gxhd span:nth-child(2){text-align:center} .gxhd span:nth-child(3),.gxhd span:nth-child(4){text-align:right}
+  .gxspot{display:flex;align-items:center;gap:8px;margin:1px 0}
+  .gxspot:before,.gxspot:after{content:"";flex:1;height:1px;background:repeating-linear-gradient(90deg,#41505f 0 4px,transparent 4px 8px)}
+  .gxspot span{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:var(--dim);text-transform:uppercase}
+  .gxtot{display:flex;justify-content:space-between;gap:6px;font-family:var(--mono);font-size:10px;color:var(--faint);border-top:1px solid var(--line);padding-top:8px;margin-top:2px}
+  @media(max-width:430px){.gxrow,.gxhd{grid-template-columns:48px 1fr 56px 34px;gap:6px}.gxtot{font-size:9px}}
   .nav{display:flex;justify-content:space-between;align-items:center;max-width:470px;margin:0 auto 4px;padding:0 8px}
   .nav a{font-family:var(--mono);font-size:11px;color:var(--faint);text-decoration:none}
   .nav a:hover{color:var(--dim)}
@@ -53,49 +71,50 @@
 </style>
 <div class="nav"><a href="../stocks/">‹ watchlist</a><a href="../">NQ ›</a></div>
 <div class="wrap"><div class="card">
-  <div class="top"><div class="tkr">DIS</div><div class="px"><div class="lab">Last</div><div class="val">104.91</div></div></div>
-  <div class="banner b-blue"><span class="pill">Long Gamma</span><p>Net dealer gamma is <b style='color:#8fe3c4'>positive</b> and DIS sits above the zero-gamma flip (99.33) — dealers are <b style='color:#bfe0ff'>long gamma</b>, buying dips and selling rips. Expect compressed, mean-reverting ranges, not trend.</p></div>
+  <div class="top"><div class="tkr">DIS</div><div class="px"><div class="lab">Last</div><div class="val">103.17</div></div></div>
+  <div class="banner b-blue"><span class="pill">Long Gamma</span><p>Net dealer gamma is <b style='color:#8fe3c4'>positive</b> and DIS sits above the zero-gamma flip (99.94) — dealers are <b style='color:#bfe0ff'>long gamma</b>, buying dips and selling rips. Expect compressed, mean-reverting ranges, not trend.</p></div>
   <div class="sec"><div class="sh"><span class="l">Gamma Walls</span><span class="r">≤7DTE · own chain</span></div>
     <div class="grid3">
       <div class="box r-red"><span class="k">Call Wall</span><span class="v">105</span></div>
-      <div class="box r-amb"><span class="k">Gamma Flip</span><span class="v">99.33</span></div>
-      <div class="box r-grn"><span class="k">Put Wall</span><span class="v">104</span></div>
+      <div class="box r-amb"><span class="k">Gamma Flip</span><span class="v">99.94</span></div>
+      <div class="box r-grn"><span class="k">Put Wall</span><span class="v">100</span></div>
     </div>
     <div class="smtac">Major OI · structural magnets (≤45D): <b style="color:#ff8a94">110</b> calls · <b style="color:#8fe3c4">100</b> puts</div></div>
-  <div class="sec"><div class="sh"><span class="l">Floor Pivots</span><span class="r">PP 103.98</span></div>
+  <div class="sec"><div class="sh"><span class="l">GEX by Strike</span><span class="r">12 biggest · $ per 1% move</span></div><div class="gxwrap"><div class="gxhd"><span>Strike</span><span>◀ puts · calls ▶</span><span>$ gamma</span><span>OI</span></div><div class="gxrow"><span class="lv">109</span><span class="gxbar"><i class="c" style="width:1.6%"></i></span><span class="amt" style="color:#ff8a94">+$49K</span><span class="oi">175</span></div><div class="gxrow"><span class="lv">108</span><span class="gxbar"><i class="c" style="width:8.0%"></i></span><span class="amt" style="color:#ff8a94">+$244K</span><span class="oi">579</span></div><div class="gxrow"><span class="lv">107</span><span class="gxbar"><i class="c" style="width:11.9%"></i></span><span class="amt" style="color:#ff8a94">+$364K</span><span class="oi">656</span></div><div class="gxrow"><span class="lv">106</span><span class="gxbar"><i class="c" style="width:27.7%"></i></span><span class="amt" style="color:#ff8a94">+$843K</span><span class="oi">901</span></div><div class="gxrow"><span class="lv">105</span><span class="gxbar"><i class="c" style="width:50.0%"></i></span><span class="amt" style="color:#ff8a94">+$2M</span><span class="oi">1.5k</span></div><div class="gxrow"><span class="lv">104</span><span class="gxbar"><i class="c" style="width:16.1%"></i></span><span class="amt" style="color:#ff8a94">+$491K</span><span class="oi">982</span></div><div class="gxspot"><span>spot 103.17</span></div><div class="gxrow"><span class="lv">103</span><span class="gxbar"><i class="c" style="width:7.3%"></i></span><span class="amt" style="color:#ff8a94">+$223K</span><span class="oi">470</span></div><div class="gxrow"><span class="lv">102</span><span class="gxbar"><i class="c" style="width:27.7%"></i></span><span class="amt" style="color:#ff8a94">+$843K</span><span class="oi">1.2k</span></div><div class="gxrow"><span class="lv">101</span><span class="gxbar"><i class="p" style="width:1.7%"></i></span><span class="amt" style="color:#8fe3c4">−$53K</span><span class="oi">726</span></div><div class="gxrow"><span class="lv">100</span><span class="gxbar"><i class="p" style="width:4.6%"></i></span><span class="amt" style="color:#8fe3c4">−$140K</span><span class="oi">1.4k</span></div><div class="gxrow"><span class="lv">99</span><span class="gxbar"><i class="p" style="width:5.0%"></i></span><span class="amt" style="color:#8fe3c4">−$153K</span><span class="oi">320</span></div><div class="gxrow"><span class="lv">98</span><span class="gxbar"><i class="p" style="width:2.4%"></i></span><span class="amt" style="color:#8fe3c4">−$72K</span><span class="oi">1.1k</span></div></div><div class="gxtot"><span>Net <b style="color:#bfe0ff">+$4M</b></span><span>Calls <b style="color:#ff8a94">+$7M</b></span><span>Puts <b style="color:#8fe3c4">−$3M</b></span><span>OI notl <b style="color:#8a95a3">$141M</b></span></div><div class="smtac">Dealers hedge ≈$4M of delta per 1% move — buying dips and selling rips (stabilising).</div><div class="disc">Γ × OI × 100 × spot² × 1% — dollars of delta dealers rehedge per 1% move. <b style="color:#ff8a94">Red</b> = call gamma dominates (caps rallies), <b style="color:#8fe3c4">green</b> = put gamma dominates (cushions dips). Ladder = the 12 largest of 21 strikes; totals cover all 21. Assumes dealers long calls / short puts.</div></div>
+  <div class="sec"><div class="sh"><span class="l">Floor Pivots</span><span class="r">PP 104.62</span></div>
     <div class="grid6">
-      <div class="box sm r-red"><span class="k">R3</span><span class="v">107.64</span></div>
-      <div class="box sm r-red"><span class="k">R2</span><span class="v">106.19</span></div>
-      <div class="box sm r-red"><span class="k">R1</span><span class="v">105.43</span></div>
-      <div class="box sm r-grn"><span class="k">S1</span><span class="v">103.22</span></div>
-      <div class="box sm r-grn"><span class="k">S2</span><span class="v">101.77</span></div>
-      <div class="box sm r-grn"><span class="k">S3</span><span class="v">101.01</span></div>
+      <div class="box sm r-red"><span class="k">R3</span><span class="v">107.09</span></div>
+      <div class="box sm r-red"><span class="k">R2</span><span class="v">106.17</span></div>
+      <div class="box sm r-red"><span class="k">R1</span><span class="v">105.54</span></div>
+      <div class="box sm r-grn"><span class="k">S1</span><span class="v">103.99</span></div>
+      <div class="box sm r-grn"><span class="k">S2</span><span class="v">103.07</span></div>
+      <div class="box sm r-grn"><span class="k">S3</span><span class="v">102.44</span></div>
     </div></div>
   <div class="sec"><div class="sh"><span class="l">Prior Session + Pre-Market</span></div>
     <div class="grid4">
-      <div class="box sm r-neu"><span class="k">Prior High</span><span class="v">104.73</span></div>
-      <div class="box sm r-neu"><span class="k">Prior Low</span><span class="v">102.52</span></div>
+      <div class="box sm r-neu"><span class="k">Prior High</span><span class="v">105.25</span></div>
+      <div class="box sm r-neu"><span class="k">Prior Low</span><span class="v">103.7</span></div>
       <div class="box sm r-neu"><span class="k">Pre-Mkt High</span><span class="v">105.24</span></div>
-      <div class="box sm r-neu"><span class="k">Pre-Mkt Low</span><span class="v">104.54</span></div>
+      <div class="box sm r-neu"><span class="k">Pre-Mkt Low</span><span class="v">104.3</span></div>
     </div></div>
   <div class="sec"><div class="sh"><span class="l">Strike Map</span><span class="r">gamma-derived · you pick direction &amp; timing</span></div>
     <div class="smap">
       <div class="smrow"><span class="tag red">Upside</span><span class="sk">105</span><span class="dsc">call wall — ceiling / target; strikes above it fight resistance</span></div>
-      <div class="smrow"><span class="tag grn">Downside</span><span class="sk">104</span><span class="dsc">put wall — floor / target; strikes below it fight support</span></div>
-      <div class="smrow"><span class="tag amb">Pivot</span><span class="sk">99.33</span><span class="dsc">flip — above the flip — fades of extremes back toward it are the structure</span></div>
+      <div class="smrow"><span class="tag grn">Downside</span><span class="sk">100</span><span class="dsc">put wall — floor / target; strikes below it fight support</span></div>
+      <div class="smrow"><span class="tag amb">Pivot</span><span class="sk">99.94</span><span class="dsc">flip — above the flip — fades of extremes back toward it are the structure</span></div>
       <div class="smtac">Pinning tape: the walls tend to be destinations and breakouts fade back inside.</div>
       <div class="disc">Structural reference from dealer gamma — not advice. You supply direction, timing &amp; risk.</div>
     </div></div>
   <div class="sec"><div class="sh"><span class="l">Probability</span><span class="r">market-implied · by exp +4d</span></div>
     <div class="grid3">
-      <div class="box r-red"><span class="k">Break Up</span><span class="v">47%</span></div>
-      <div class="box r-amb"><span class="k">Pin / Range</span><span class="v">13%</span></div>
-      <div class="box r-grn"><span class="k">Break Down</span><span class="v">40%</span></div>
+      <div class="box r-red"><span class="k">Break Up</span><span class="v">27%</span></div>
+      <div class="box r-amb"><span class="k">Pin / Range</span><span class="v">61%</span></div>
+      <div class="box r-grn"><span class="k">Break Down</span><span class="v">12%</span></div>
     </div>
-    <div class="smtac">Balanced — odds of closing beyond each wall by expiry.</div>
+    <div class="smtac">Range-bound — odds of closing beyond each wall by expiry.</div>
     <div class="disc">Market-implied (risk-neutral) · terminal odds (touch ≈ 2×) · not a forecast.</div></div>
-  <div class="read"><span class="badge">Neutral · Fade the Edges</span><p>Price is boxed between the put wall (104) and call wall (105), above the flip. In long-gamma the walls act like magnets and breakouts tend to fail back inside.</p>
-    <div class="trade"><span class="t">Trade</span><p>Buy dips toward the flip / S1 (99.33–103.22), sell rips into the call wall (105). A clean loss of the flip on volume turns it into a trend day.</p></div></div>
-  <div class="foot"><b>Built 2026-08-10 08:00 ET</b> · DIS near-term options (CBOE ≈15-min delayed) + Yahoo<br>Gamma from ≤7 DTE, self-computed IV/gamma.</div>
+  <div class="read"><span class="badge">Neutral · Fade the Edges</span><p>Price is boxed between the put wall (100) and call wall (105), above the flip. In long-gamma the walls act like magnets and breakouts tend to fail back inside.</p>
+    <div class="trade"><span class="t">Trade</span><p>Buy dips toward the flip / S1 (99.94–103.99), sell rips into the call wall (105). A clean loss of the flip on volume turns it into a trend day.</p></div></div>
+  <div class="foot"><b>Built 2026-08-10 14:40 ET</b> · DIS near-term options (CBOE ≈15-min delayed) + Yahoo<br>Gamma from ≤7 DTE, self-computed IV/gamma.</div>
 </div></div>
 <script>(function(){var K='gamma_recents',S='DIS';try{var a=JSON.parse(localStorage.getItem(K)||'[]');a=a.filter(function(x){return x!==S});a.unshift(S);a=a.slice(0,5);localStorage.setItem(K,JSON.stringify(a));}catch(e){}})();</script>
