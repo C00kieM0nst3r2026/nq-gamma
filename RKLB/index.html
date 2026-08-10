@@ -47,7 +47,12 @@
   .smtac{font-size:11.5px;color:var(--dim);margin-top:3px}
   .disc{font-size:10px;color:var(--faint);margin-top:2px;line-height:1.5}
   .gxwrap{display:flex;flex-direction:column;gap:3px}
-  .gxrow{display:grid;grid-template-columns:56px 1fr 62px 40px;align-items:center;gap:8px}
+  .gxrow{display:grid;grid-template-columns:56px 38px 1fr 62px 38px;align-items:center;gap:7px}
+  .gxrow .xp{font-family:var(--mono);font-size:9.5px;text-align:center;color:var(--faint);font-variant-numeric:tabular-nums}
+  .gxrow .xp.z{color:#ffd98a}
+  .gxexp{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 9px;font-family:var(--mono);font-size:9.5px;color:var(--faint);margin-top:5px}
+  .gxexp .xl{letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+  .gxexp .xe.z{color:#ffd98a}
   .gxrow .lv{font-family:var(--mono);font-size:11px;font-variant-numeric:tabular-nums;color:var(--ink)}
   .gxbar{position:relative;height:11px;background:var(--panel);border:1px solid var(--line);border-radius:3px}
   .gxbar:before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:#2c3742}
@@ -56,14 +61,15 @@
   .gxbar i.p{right:50%;background:linear-gradient(270deg,rgba(53,211,166,.4),var(--green))}
   .gxrow .amt{font-family:var(--mono);font-size:11px;text-align:right;font-variant-numeric:tabular-nums}
   .gxrow .oi{font-family:var(--mono);font-size:9.5px;text-align:right;color:var(--faint)}
-  .gxhd{display:grid;grid-template-columns:56px 1fr 62px 40px;gap:8px;font-size:8.5px;letter-spacing:.08em;
+  .gxhd{display:grid;grid-template-columns:56px 38px 1fr 62px 38px;gap:7px;font-size:8.5px;letter-spacing:.08em;
     text-transform:uppercase;color:var(--faint);margin-bottom:2px}
-  .gxhd span:nth-child(2){text-align:center} .gxhd span:nth-child(3),.gxhd span:nth-child(4){text-align:right}
+  .gxhd span:nth-child(2),.gxhd span:nth-child(3){text-align:center}
+  .gxhd span:nth-child(4),.gxhd span:nth-child(5){text-align:right}
   .gxspot{display:flex;align-items:center;gap:8px;margin:1px 0}
   .gxspot:before,.gxspot:after{content:"";flex:1;height:1px;background:repeating-linear-gradient(90deg,#41505f 0 4px,transparent 4px 8px)}
   .gxspot span{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:var(--dim);text-transform:uppercase}
   .gxtot{display:flex;justify-content:space-between;gap:6px;font-family:var(--mono);font-size:10px;color:var(--faint);border-top:1px solid var(--line);padding-top:8px;margin-top:2px}
-  @media(max-width:430px){.gxrow,.gxhd{grid-template-columns:48px 1fr 56px 34px;gap:6px}.gxtot{font-size:9px}}
+  @media(max-width:430px){.gxrow,.gxhd{grid-template-columns:48px 34px 1fr 54px 32px;gap:5px}.gxtot{font-size:9px}}
   .nav{display:flex;justify-content:space-between;align-items:center;max-width:470px;margin:0 auto 4px;padding:0 8px}
   .nav a{font-family:var(--mono);font-size:11px;color:var(--faint);text-decoration:none}
   .nav a:hover{color:var(--dim)}
@@ -71,7 +77,7 @@
 </style>
 <div class="nav"><a href="../stocks/">‹ watchlist</a><a href="../">NQ ›</a></div>
 <div class="wrap"><div class="card">
-  <div class="top"><div class="tkr">RKLB</div><div class="px"><div class="lab">Last</div><div class="val">80.55</div></div></div>
+  <div class="top"><div class="tkr">RKLB</div><div class="px"><div class="lab">Last</div><div class="val">80.38</div></div></div>
   <div class="banner b-red"><span class="pill">Short Gamma</span><p>Net dealer gamma is <b style='color:#ffb3ba'>negative</b> and RKLB is below the zero-gamma flip (—) — dealers hedge <i>with</i> the move, so expect trend and expanding ranges. Reclaiming the flip calms the tape.</p></div>
   <div class="sec"><div class="sh"><span class="l">Gamma Walls</span><span class="r">≤7DTE · own chain</span></div>
     <div class="grid3">
@@ -79,8 +85,8 @@
       <div class="box r-amb"><span class="k">Gamma Flip</span><span class="v">—</span></div>
       <div class="box r-grn"><span class="k">Put Wall</span><span class="v">80</span></div>
     </div>
-    <div class="smtac">Major OI · structural magnets (≤45D): <b style="color:#ff8a94">90</b> calls · <b style="color:#8fe3c4">80</b> puts</div></div>
-  <div class="sec"><div class="sh"><span class="l">GEX by Strike</span><span class="r">10 biggest · $ per 1% move</span></div><div class="gxwrap"><div class="gxhd"><span>Strike</span><span>◀ puts · calls ▶</span><span>$ gamma</span><span>OI</span></div><div class="gxrow"><span class="lv">85</span><span class="gxbar"><i class="c" style="width:21.3%"></i></span><span class="amt" style="color:#ff8a94">+$519K</span><span class="oi">3.6k</span></div><div class="gxrow"><span class="lv">84</span><span class="gxbar"><i class="c" style="width:13.8%"></i></span><span class="amt" style="color:#ff8a94">+$336K</span><span class="oi">1.9k</span></div><div class="gxrow"><span class="lv">83</span><span class="gxbar"><i class="c" style="width:4.0%"></i></span><span class="amt" style="color:#ff8a94">+$96K</span><span class="oi">610</span></div><div class="gxrow"><span class="lv">82</span><span class="gxbar"><i class="c" style="width:6.3%"></i></span><span class="amt" style="color:#ff8a94">+$154K</span><span class="oi">2.3k</span></div><div class="gxrow"><span class="lv">81</span><span class="gxbar"><i class="c" style="width:3.5%"></i></span><span class="amt" style="color:#ff8a94">+$85K</span><span class="oi">959</span></div><div class="gxspot"><span>spot 80.55</span></div><div class="gxrow"><span class="lv">80</span><span class="gxbar"><i class="c" style="width:50.0%"></i></span><span class="amt" style="color:#ff8a94">+$1M</span><span class="oi">7.3k</span></div><div class="gxrow"><span class="lv">79</span><span class="gxbar"><i class="c" style="width:6.4%"></i></span><span class="amt" style="color:#ff8a94">+$155K</span><span class="oi">1.2k</span></div><div class="gxrow"><span class="lv">78</span><span class="gxbar"><i class="c" style="width:2.7%"></i></span><span class="amt" style="color:#ff8a94">+$66K</span><span class="oi">581</span></div><div class="gxrow"><span class="lv">77</span><span class="gxbar"><i class="c" style="width:0.4%"></i></span><span class="amt" style="color:#ff8a94">+$10K</span><span class="oi">1.1k</span></div><div class="gxrow"><span class="lv">76</span><span class="gxbar"><i class="c" style="width:2.0%"></i></span><span class="amt" style="color:#ff8a94">+$50K</span><span class="oi">845</span></div></div><div class="gxtot"><span>Net <b style="color:#ffb3ba">+$3M</b></span><span>Calls <b style="color:#ff8a94">+$4M</b></span><span>Puts <b style="color:#8fe3c4">−$1M</b></span><span>OI notl <b style="color:#8a95a3">$216M</b></span></div><div class="smtac">Dealers hedge ≈$3M of delta per 1% move — buying dips and selling rips (stabilising).</div><div class="disc">Γ × OI × 100 × spot² × 1% — dollars of delta dealers rehedge per 1% move. <b style="color:#ff8a94">Red</b> = call gamma dominates (caps rallies), <b style="color:#8fe3c4">green</b> = put gamma dominates (cushions dips). Ladder = the 10 largest of 16 strikes; totals cover all 16. Assumes dealers long calls / short puts.</div></div>
+    <div class="smtac">Major OI · structural magnets (≤45D): <b style="color:#ff8a94">85</b> calls · <b style="color:#8fe3c4">80</b> puts</div></div>
+  <div class="sec"><div class="sh"><span class="l">GEX by Strike</span><span class="r">10 biggest · $ per 1% move</span></div><div class="gxwrap"><div class="gxhd"><span>Strike</span><span>exp</span><span>◀ puts · calls ▶</span><span>$ gamma</span><span>OI</span></div><div class="gxrow"><span class="lv">85</span><span class="xp">8/14</span><span class="gxbar"><i class="c" style="width:21.3%"></i></span><span class="amt" style="color:#ff8a94">+$514K</span><span class="oi">3.6k</span></div><div class="gxrow"><span class="lv">84</span><span class="xp">8/14</span><span class="gxbar"><i class="c" style="width:14.0%"></i></span><span class="amt" style="color:#ff8a94">+$336K</span><span class="oi">1.9k</span></div><div class="gxrow"><span class="lv">83</span><span class="xp">8/14</span><span class="gxbar"><i class="c" style="width:4.0%"></i></span><span class="amt" style="color:#ff8a94">+$97K</span><span class="oi">610</span></div><div class="gxrow"><span class="lv">82</span><span class="xp">8/14</span><span class="gxbar"><i class="c" style="width:6.4%"></i></span><span class="amt" style="color:#ff8a94">+$153K</span><span class="oi">2.3k</span></div><div class="gxrow"><span class="lv">81</span><span class="xp">8/14</span><span class="gxbar"><i class="c" style="width:3.6%"></i></span><span class="amt" style="color:#ff8a94">+$86K</span><span class="oi">959</span></div><div class="gxspot"><span>spot 80.38</span></div><div class="gxrow"><span class="lv">80</span><span class="xp">8/14</span><span class="gxbar"><i class="c" style="width:50.0%"></i></span><span class="amt" style="color:#ff8a94">+$1M</span><span class="oi">7.3k</span></div><div class="gxrow"><span class="lv">79</span><span class="xp">8/14</span><span class="gxbar"><i class="c" style="width:6.3%"></i></span><span class="amt" style="color:#ff8a94">+$151K</span><span class="oi">1.2k</span></div><div class="gxrow"><span class="lv">78</span><span class="xp">8/14</span><span class="gxbar"><i class="c" style="width:2.7%"></i></span><span class="amt" style="color:#ff8a94">+$65K</span><span class="oi">581</span></div><div class="gxrow"><span class="lv">77</span><span class="xp">8/14</span><span class="gxbar"><i class="c" style="width:0.4%"></i></span><span class="amt" style="color:#ff8a94">+$9K</span><span class="oi">1.1k</span></div><div class="gxrow"><span class="lv">76</span><span class="xp">8/14</span><span class="gxbar"><i class="c" style="width:2.0%"></i></span><span class="amt" style="color:#ff8a94">+$48K</span><span class="oi">845</span></div></div><div class="gxexp"><span class="xl">Rolls off</span><span class="xe">8/14 <b style="color:#ff8a94">+$3M</b></span></div><div class="gxtot"><span>Net <b style="color:#ffb3ba">+$3M</b></span><span>Calls <b style="color:#ff8a94">+$4M</b></span><span>Puts <b style="color:#8fe3c4">−$1M</b></span><span>OI notl <b style="color:#8a95a3">$216M</b></span></div><div class="smtac">Dealers hedge ≈$3M of delta per 1% move — buying dips and selling rips (stabilising).</div><div class="disc">Γ × OI × 100 × spot² × 1% — dollars of delta dealers rehedge per 1% move. <b style="color:#ff8a94">Red</b> = call gamma dominates (caps rallies), <b style="color:#8fe3c4">green</b> = put gamma dominates (cushions dips). <b>Exp</b> = the expiry holding most of that strike's gamma (<b>+</b> = split across several); <b style="color:#ffd98a">0DTE</b> gamma is gone after today's close. Ladder = the 10 largest of 16 strikes; totals cover all 16. Assumes dealers long calls / short puts.</div></div>
   <div class="sec"><div class="sh"><span class="l">Floor Pivots</span><span class="r">PP 81.15</span></div>
     <div class="grid6">
       <div class="box sm r-red"><span class="k">R3</span><span class="v">90.8</span></div>
@@ -115,6 +121,6 @@
     <div class="disc">Market-implied (risk-neutral) · terminal odds (touch ≈ 2×) · not a forecast.</div></div>
   <div class="read"><span class="badge">Bearish · Trend / Short-Gamma</span><p>Below the flip the walls stop pinning and momentum extends. Put wall (80) is the downside magnet; the flip (—) is the reclaim line, call wall (85) caps upside.</p>
     <div class="trade"><span class="t">Trade</span><p>Trade with the trend / fade rips into the flip (—); a reclaim on volume flips it neutral.</p></div></div>
-  <div class="foot"><b>Built 2026-08-10 14:40 ET</b> · RKLB near-term options (CBOE ≈15-min delayed) + Yahoo<br>Gamma from ≤7 DTE, self-computed IV/gamma.</div>
+  <div class="foot"><b>Built 2026-08-10 14:49 ET</b> · RKLB near-term options (CBOE ≈15-min delayed) + Yahoo<br>Gamma from ≤7 DTE, self-computed IV/gamma.</div>
 </div></div>
 <script>(function(){var K='gamma_recents',S='RKLB';try{var a=JSON.parse(localStorage.getItem(K)||'[]');a=a.filter(function(x){return x!==S});a.unshift(S);a=a.slice(0,5);localStorage.setItem(K,JSON.stringify(a));}catch(e){}})();</script>
